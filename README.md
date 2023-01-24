@@ -38,9 +38,8 @@ This format does not have specific format option.
 
 ## Limitations
 
-Currently it only support the `journal` option of the [IEEEtran latex class](https://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/).
-The `conference` option is not yet supported.
+The `conference` option is supported through the use of the `classoption` parameter.
 
 ## Dependencies
 
-The [extension latex-environment](https://github.com/quarto-ext/latex-environment) should be installed to support the Markdown table.
+The [quarto extension latex-environment](https://github.com/quarto-ext/latex-environment) should be installed to support the Markdown table.

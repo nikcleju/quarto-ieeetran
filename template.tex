@@ -1,7 +1,17 @@
-\documentclass[letterpaper, 10 pt, journal, twoside]{IEEEtran}
-\IEEEoverridecommandlockouts
+%\documentclass[letterpaper, 10 pt, journal, twoside]{IEEEtran}
+% https://ras.papercept.net/conferences/support/files/IEEEtran_HOWTO.pdf
+\documentclass[
+  10pt,
+  letterpaper,
+  journal,
+  twoside]{IEEEtran}
 
-% Quarto basics
+  \IEEEoverridecommandlockouts
+
+% Quarto basics minus two problematic packages
+\RequirePackage{scrlfile}
+\PreventPackageFromLoading{sidenotes}
+\PreventPackageFromLoading{marginnotes}
 
 \usepackage{color}
 \usepackage{fancyvrb}
@@ -93,22 +103,6 @@
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
-\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
-\definecolor{quarto-callout-color}{HTML}{909090}
-\definecolor{quarto-callout-note-color}{HTML}{0758E5}
-\definecolor{quarto-callout-important-color}{HTML}{CC1914}
-\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
-\definecolor{quarto-callout-tip-color}{HTML}{00A047}
-\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
-\definecolor{quarto-callout-color-frame}{HTML}{acacac}
-\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
-\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
-\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
-\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
-\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
-\makeatother
-\makeatletter
 \makeatother
 \makeatletter
 \makeatother
@@ -190,6 +184,7 @@
 % My tables
 \newenvironment{mytable}[1][htbp]{
     \begin{figure}[#1]
+    \footnotesize
     \onecolumn
     \begin{minipage}{0.5\textwidth}}
 {
@@ -197,14 +192,18 @@
     \twocolumn
     \end{figure}}
 
-\newenvironment{mywidetable}[1][htbp]{
+\newenvironment{mywidetable}[1][tbp]{
     \begin{figure*}[#1]
+    \footnotesize
     \onecolumn
     \begin{minipage}{1.0\textwidth}}
 {
     \end{minipage}
     \twocolumn
     \end{figure*}}
+
+\renewenvironment{table*}{\begin{mywidetable}}{\end{mywidetable}\ignorespacesafterend}
+\renewenvironment{table}{\begin{mytable}}{\end{mytable}\ignorespacesafterend}    
 \makeatother
 
 
@@ -248,12 +247,6 @@ Author\(^1\)\orcidlink{0000-0000-0000-0000},     Third Author\(^2\)
 \end{abstract}
 
 % body
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, leftrule=.75mm, titlerule=0mm, breakable, coltitle=black, left=2mm, colback=white, colframe=quarto-callout-note-color-frame, toptitle=1mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, rightrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6]
-
-This is a template
-
-\end{tcolorbox}
-
 \hypertarget{sec-intro}{%
 \section{Introduction}\label{sec-intro}}
 

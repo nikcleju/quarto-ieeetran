@@ -14,6 +14,8 @@ contributes:
         # Add here the resources required for the PDF rendering
         - IEEEtran.cls
         - custom.scss
+      IEEEoverridecommandlockouts: true
+      documentclass: IEEEtran
     html:
       # define default configuration for the html version of your format
       number-sections: true

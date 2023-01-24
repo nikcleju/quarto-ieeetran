@@ -1,5 +1,20 @@
-\documentclass[letterpaper, 10 pt, journal, twoside]{IEEEtran}
-\IEEEoverridecommandlockouts
+%\documentclass[letterpaper, 10 pt, journal, twoside]{IEEEtran}
+% https://ras.papercept.net/conferences/support/files/IEEEtran_HOWTO.pdf
+\documentclass[
+$if(fontsize)$
+  $fontsize$,
+$endif$
+$if(papersize)$
+  $papersize$paper,
+$endif$
+$for(classoption)$
+  $classoption$$sep$,
+$endfor$
+]{$documentclass$}
+
+$if(IEEEoverridecommandlockouts)$
+  \IEEEoverridecommandlockouts
+$endif$
 
 % Quarto basics minus two problematic packages
 \RequirePackage{scrlfile}
